@@ -3,9 +3,7 @@
 
 cmake_minimum_required(VERSION 3.23)
 
-set(TARGET_PROJECT "beman_example")
-
-project("${TARGET_PROJECT}"
+project(beman_example
   VERSION 1.0.0
   DESCRIPTION "An example Beman library"
   LANGUAGES CXX
@@ -29,7 +27,7 @@ if (BUILD_TESTING)
 endif ()
 
 # Build the library.
-add_subdirectory(src)
+add_subdirectory(src/Beman/Example)
 
 # Build the examples.
 add_subdirectory(examples)

@@ -1,21 +1,19 @@
 # SPDX-License-Identifier: MIT
 # Copyright © 2024 Bret Brown
 
-set(TARGET_TEST "example_gtest")
-
-# Add the test executable.
-add_executable("${TARGET_TEST}")
-
-# Set the C++ sources.
-target_sources("${TARGET_TEST}" PRIVATE 
-  example.t.cpp
-)
-
 # Include the GoogleTest CMake module.
 include(GoogleTest)
 
+# Add the test executable.
+add_executable(beman_example_test)
+
+# Set the C++ sources.
+target_sources(beman_example_test PRIVATE
+  example.t.cpp
+)
+
 # Link the library.
-target_link_libraries("${TARGET_TEST}" PRIVATE beman::example GTest::gtest GTest::gtest_main)
+target_link_libraries(beman_example_test PRIVATE beman::example GTest::gtest GTest::gtest_main)
 
 # Add the tests.
-gtest_add_tests("${TARGET_TEST}" "" AUTO)
+gtest_add_tests(beman_example_test "" AUTO)

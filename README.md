@@ -127,6 +127,14 @@ You will see files like so:
             └── libexample.a
 ```
 
+#### Disable Tests Build
+
+To build this project with skiped tests and its dependencies, simply use `BUILD_TESTING=OFF` [as documented in upstream CMake documentation](https://cmake.org/cmake/help/latest/module/CTest.html:
+
+```shell
+cmake -B /some/build/dir -S . -DBUILD_TESTING=OFF
+```
+
 #### Manipulating Warnings
 
 To build this project with warnings enabled, simply use `CMAKE_CXX_FLAGS` [as documented in upstream CMake documentation](https://cmake.org/cmake/help/latest/variable/CMAKE_LANG_FLAGS.html):
